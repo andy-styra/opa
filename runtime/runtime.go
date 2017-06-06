@@ -104,11 +104,6 @@ func (rt *Runtime) Start(params *Params) {
 
 	ctx := context.Background()
 
-	if err := rt.init(ctx, params); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
 	if params.Server {
 		rt.startServer(ctx, params)
 	} else {
